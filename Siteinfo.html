@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal Liceu | Moldova</title>
+    <style>
+        :root {
+            --primary: #004a99;
+            --secondary: #002d5f;
+            --accent: #ffcc00;
+            --bg: #f0f2f5;
+            --text: #1e293b;
+            --white: #ffffff;
+            --code-bg: #1e1e1e;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* Navigatie */
+        nav {
+            background: var(--primary); color: var(--white);
+            padding: 1rem 0; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            width: 90%; max-width: 1200px; margin: auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+
+        /* Header Principal */
+        header {
+            background: linear-gradient(rgba(0, 74, 153, 0.9), rgba(0, 45, 95, 0.9)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            padding: 100px 20px; color: var(--white); text-align: center;
+        }
+        header h1 { font-size: 3rem; letter-spacing: -1px; }
+
+        .container { width: 90%; max-width: 1200px; margin: -50px auto 50px; }
+
+        /* Grid Pagina Principala */
+        .main-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
+        }
+        .card {
+            background: var(--white); padding: 30px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+            border-bottom: 5px solid var(--primary);
+        }
+        .card:hover { transform: translateY(-10px); }
+
+        /* SECTIUNE NOUA: Noutati/Info */
+        .info-strip {
+            background: var(--white); padding: 30px; border-radius: 15px;
+            margin: 40px 0; display: flex; gap: 30px; align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .info-strip img { width: 150px; border-radius: 10px; }
+
+        /* Stiluri Pagini Detaliu */
+        .page { display: none; background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
+        .page:target { display: block; animation: fadeIn 0.5s; }
+        .main-content:has(~ .page:target) { display: none; }
+
+        .theory-section { margin-bottom: 40px; padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--accent); }
+        .code-snippet { background: var(--code-bg); color: #d1d5db; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace; margin: 20px 0; overflow-x: auto; }
+        
+        /* Video Container */
+        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 15px; margin: 30px 0; overflow: hidden; }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 40px; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><strong>INFO</strong>LICEU</div>
+            <ul>
+                <li><a href="#">ACASĂ</a></li>
+                <li><a href="#clasa10">CLASA X</a></li>
+                <li><a href="#clasa11">CLASA XI</a></li>
+                <li><a href="#clasa12">CLASA XII</a></li>
+                <li><a href="#probleme">LABORATOR</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <header>
+            <h1>Portal de Informatică</h1>
+            <p>Resurse complete pentru elevii din Republica Moldova</p>
+        </header>
+
+        <div class="container">
+            <div class="main-grid">
+                <div class="card">
+                    <h3>Clasa X</h3>
+                    <p>Primii pași în C++: vocabular, tipuri de date și instrucțiuni simple.</p>
+                    <a href="#clasa10" style="color: var(--primary); font-weight: 700;">Vezi lecții →</a>
+                </div>
+                <div class="card">
+                    <h3>Clasa XI</h3>
+                    <p>Eficiența algoritmilor: matrice, liste dinamice și grafuri.</p>
+                    <a href="#clasa11" style="color: var(--primary); font-weight: 700;">Vezi lecții →</a>
+                </div>
+                <div class="card">
+                    <h3>Clasa XII</h3>
+                    <p>Sisteme complexe: baze de date SQL și arhitecturi Web.</p>
+                    <a href="#clasa12" style="color: var(--primary); font-weight: 700;">Vezi lecții →</a>
+                </div>
+                <div class="card" style="border-bottom-color: var(--success);">
+                    <h3>Probleme Rezolvate</h3>
+                    <p>Analize detaliate ale algoritmilor de la teze și examene de BAC.</p>
+                    <a href="#probleme" style="color: var(--success); font-weight: 700;">Vezi codul →</a>
+                </div>
+            </div>
+
+            <div class="info-strip">
+                <div>
+                    <h2>Curiozitatea Zilei</h2>
+                    <p>Știai că prima programatoare din istorie a fost <strong>Ada Lovelace</strong>? Ea a scris primul algoritm destinat să fie executat de o mașină, punând bazele a ceea ce studiem noi astăzi în manualele de clasa a X-a.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=300&q=80" alt="Cod">
+            </div>
+
+            <div class="info-strip" style="background: var(--secondary); color: white;">
+                <div>
+                    <h2>De ce este importantă Informatica în Moldova?</h2>
+                    <p>Sectorul IT este unul dintre cele mai dezvoltate în Republica Moldova. Manualele actuale (Ed. 2020) sunt concepute să dezvolte gândirea logică necesară pentru a lucra în companii internaționale.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="clasa10" class="page container">
+        <a href="#" class="back-btn">← Înapoi</a>
+        <h2>Clasa a X-a: Bazele Limbajului</h2>
+        <div class="theory-section">
+            <h3>Vocabularul și Sintaxa</h3>
+            <p>Conform paginii 15 din manual, un program este compus dintr-un set de <strong>unități lexicale</strong>. Acestea includ:</p>
+            <ul>
+                <li><strong>Identificatori:</strong> nume de variabile (ex: suma, nr_elevi).</li>
+                <li><strong>Cuvinte-cheie:</strong> cuvinte rezervate (<code>if, int, return</code>).</li>
+                <li><strong>Simboluri speciale:</strong> +, -, *, /, { }.</li>
+            </ul>
+        </div>
+       <div class="video-box" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        src="https://www.youtube-nocookie.com/embed/t7WpLg9iL_c?rel=0&amp;showinfo=0" 
+        title="Alfabetul și vocabularul" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+        <p><strong>Subprograme (Funcții):</strong> Modularizarea este esențială. O funcție are un tip de returnare, un nume și parametri formali.</p>
+    </div>
+
+    <div id="clasa11" class="page container">
+        <a href="#" class="back-btn">← Înapoi</a>
+        <h2>Clasa a XI-a: Tablouri și Memorie</h2>
+        <div class="theory-section">
+            <h3>Memoria Statică vs Dinamică</h3>
+            <p>Manualul de clasa a XI-a introduce conceptul de <strong>Pointer</strong>. O variabilă statică ocupă memorie pe toată durata execuției, pe când una dinamică este creată pe <em>Heap</em> folosind operatorul <code>new</code>.</p>
+        </div>
+        <div class="video-box" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        src="https://www.youtube-nocookie.com/embed/C4wamb4goyk" 
+        title="Suma și produsul elementelor unei matrici - C++" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+        <h3>Teoria Grafurilor</h3>
+        <p>Un graf este o pereche de mulțimi G=(V, E), unde V sunt nodurile, iar E sunt muchiile. Se reprezintă prin <strong>Matricea de adiacență</strong>.</p>
+    </div>
+
+    <div id="clasa12" class="page container">
+        <a href="#" class="back-btn">← Înapoi</a>
+        <h2>Clasa a XII-a: Tehnologii Informaționale</h2>
+        <div class="theory-section">
+            <h3>Gestiunea Bazelor de Date</h3>
+            <p>Modelul relațional organizează datele în tabele corelate. <strong>Cheia primară</strong> este atributul care identifică în mod unic o înregistrare.</p>
+        </div>
+        <div class="video-box" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        src="https://www.youtube-nocookie.com/embed/92okqT-9LPA" 
+        title="Baze de date. Noțiuni și concepte - Clasa XII" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+        <h3>Limbajul SQL</h3>
+        <p>Comenzi învățate: <code>SELECT</code> (extracție), <code>INSERT</code> (adăugare), <code>UPDATE</code> (modificare).</p>
+    </div>
+
+    <div id="probleme" class="page container">
+        <a href="#" class="back-btn">← Înapoi</a>
+        <h2>Laborator: Analiza Algoritmilor</h2>
+        <div class="theory-section">
+            <h3>Exemplu: Sortarea prin Metoda Bulelor (Clasa XI)</h3>
+            <p>Această metodă compară succesiv elementele adiacente și le interschimbă dacă nu sunt în ordine.</p>
+            <div class="code-snippet">
+for(i=0; i<n-1; i++)
+  for(j=0; j<n-i-1; j++)
+    if(A[j] > A[j+1]) swap(A[j], A[j+1]);</div>
+            <p><em>Analiză:</em> Complexitatea este O(n²), ceea ce o face ineficientă pentru seturi mari de date.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Creat pentru portofoliul de Informatică • Republica Moldova</p>
+        <p>&copy; 2026 - Educație prin Tehnologie</p>
+    </footer>
+
+</body>
+</html>
