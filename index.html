@@ -19,7 +19,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
-        /* Navigatie */
         nav {
             background: var(--primary); color: var(--white);
             padding: 1rem 0; position: sticky; top: 0; z-index: 1000;
@@ -32,7 +31,6 @@
         nav ul { display: flex; list-style: none; gap: 20px; }
         nav ul li a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
 
-        /* Header Principal */
         header {
             background: linear-gradient(rgba(0, 74, 153, 0.9), rgba(0, 45, 95, 0.9)), 
                         url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
@@ -43,7 +41,6 @@
 
         .container { width: 90%; max-width: 1200px; margin: -50px auto 50px; }
 
-        /* Grid Pagina Principala */
         .main-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
         }
@@ -54,7 +51,6 @@
         }
         .card:hover { transform: translateY(-10px); }
 
-        /* SECTIUNE NOUA: Noutati/Info */
         .info-strip {
             background: var(--white); padding: 30px; border-radius: 15px;
             margin: 40px 0; display: flex; gap: 30px; align-items: center;
@@ -62,7 +58,6 @@
         }
         .info-strip img { width: 150px; border-radius: 10px; }
 
-        /* Stiluri Pagini Detaliu */
         .page { display: none; background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
         .page:target { display: block; animation: fadeIn 0.5s; }
         .main-content:has(~ .page:target) { display: none; }
@@ -70,7 +65,6 @@
         .theory-section { margin-bottom: 40px; padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--accent); }
         .code-snippet { background: var(--code-bg); color: #d1d5db; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace; margin: 20px 0; overflow-x: auto; }
         
-        /* Video Container */
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 15px; margin: 30px 0; overflow: hidden; }
 
         footer { background: var(--secondary); color: white; text-align: center; padding: 40px; }
@@ -164,26 +158,175 @@
         <p><strong>Subprograme (Funcții):</strong> Modularizarea este esențială. O funcție are un tip de returnare, un nume și parametri formali.</p>
     </div>
 
-    <div id="clasa11" class="page container">
-        <a href="#" class="back-btn">← Înapoi</a>
-        <h2>Clasa a XI-a: Tablouri și Memorie</h2>
-        <div class="theory-section">
-            <h3>Memoria Statică vs Dinamică</h3>
-            <p>Manualul de clasa a XI-a introduce conceptul de <strong>Pointer</strong>. O variabilă statică ocupă memorie pe toată durata execuției, pe când una dinamică este creată pe <em>Heap</em> folosind operatorul <code>new</code>.</p>
-        </div>
-        <div class="video-box" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-        src="https://www.youtube-nocookie.com/embed/C4wamb4goyk" 
-        title="Suma și produsul elementelor unei matrici - C++" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-    </iframe>
-</div>
-        <h3>Teoria Grafurilor</h3>
-        <p>Un graf este o pereche de mulțimi G=(V, E), unde V sunt nodurile, iar E sunt muchiile. Se reprezintă prin <strong>Matricea de adiacență</strong>.</p>
+<div id="clasa11" class="page container">
+    <a href="#" class="back-btn">← Înapoi la Acasă</a>
+    
+    <header style="background: var(--primary); padding: 40px; border-radius: 15px; margin-bottom: 30px; text-align: center;">
+        <h2 style="color: white; margin-bottom: 10px;">Curriculum Clasa a XI-a</h2>
+        <p style="color: var(--accent); font-weight: 600;">Ghid de pregătire pentru prezentări orale și laborator</p>
+    </header>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 40px;">
+        <a href="#t1" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">1. Subprograme</a>
+        <a href="#t2" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">2. Transmiterea Parametrilor</a>
+        <a href="#t3" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">3. Vizibilitate & Viață</a>
+        <a href="#t4" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">4. Recursia</a>
+        <a href="#t5" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">5. Pointeri & Heap</a>
+        <a href="#t6" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">6. Stiva (LIFO)</a>
+        <a href="#t7" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">7. Coada (FIFO)</a>
+        <a href="#t8" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">8. Tehnica Greedy</a>
+        <a href="#t9" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">9. Backtracking</a>
+        <a href="#t10" class="card" style="padding:15px; text-decoration:none; border-bottom:3px solid var(--accent);">10. Divide et Impera</a>
     </div>
 
+    <div class="theory-section" style="border-left-color: var(--success);">
+        <h3>Resursă Video Suplimentară</h3>
+        <div class="video-box">
+            <iframe style="width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/C4wamb4goyk" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<div id="t1" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>1. Subprograme: Funcții și Proceduri</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Subprogramele sunt unități de cod independente care rezolvă o problemă specifică. Ele permit modularizarea programului, făcându-l mai ușor de citit și depanat.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Funcția:</strong> Se folosește când avem nevoie de un singur rezultat. Numele funcției primește valoarea calculată în interior.</li>
+            <li><strong>Procedura:</strong> Se folosește pentru acțiuni mai complexe (afișări, sortări) sau când avem nevoie de mai multe rezultate.</li>
+            <li><strong>Structura:</strong> Orice subprogram are un antet (nume și listă de parametri) și un corp (instrucțiunile propriu-zise).</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Verificarea dacă 10 numere sunt prime folosind o funcție <code>estePrim(n)</code> apelată într-o buclă.</p>
+    </div>
+</div>
+
+<div id="t2" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>2. Transmiterea Parametrilor</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Această temă explică modul în care datele circulă între programul principal și subprograme.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Parametrii formali:</strong> Cei scriși în definiția subprogramului (nume generice).</li>
+            <li><strong>Parametrii efectivi:</strong> Valorile reale trimise în momentul apelului.</li>
+            <li><strong>Transmiterea prin valoare:</strong> Se face o copie; originalul rămâne intact.</li>
+            <li><strong>Transmiterea prin referință (cu var):</strong> Subprogramul primește adresa de memorie; modificările afectează variabila originală.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="t3" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>3. Domenii de Vizibilitate și Durata de Viață</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Regula care stabilește cine are acces la o variabilă și cât timp ocupă ea memoria.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Variabile Globale:</strong> Declarate la începutul programului, sunt accesibile de oriunde.</li>
+            <li><strong>Variabile Locale:</strong> Declarate în interiorul unui subprogram; apar la apel și dispar la final.</li>
+        </ul>
+        <p><strong>Avantaj:</strong> Economisește memoria și previne modificarea accidentală a datelor globale.</p>
+    </div>
+</div>
+
+<div id="t4" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>4. Recursia</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Tehnică prin care un subprogram se autoapelează pentru a rezolva o problemă prin versiuni mai simple ale sale.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Condiția de oprire:</strong> Fără ea, programul s-ar apela la infinit (Stack Overflow).</li>
+            <li><strong>Mecanismul de Stivă:</strong> Fiecare apel pune pe stivă adresa de întoarcere și valorile locale.</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Factorialul $n! = n \cdot (n-1)!$, cazul de bază fiind $0! = 1$.</p>
+    </div>
+</div>
+
+<div id="t5" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>5. Variabile Dinamice și Pointeri</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Trecerea de la memoria statică (fixă) la memoria gestionată manual de programator (zona Heap).</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Pointerul:</strong> Variabilă care reține adresa de memorie a unei alte variabile.</li>
+            <li><strong>Operații:</strong> <code>new</code> (alocare), <code>dispose</code> (eliberare), <code>^</code> (accesare conținut).</li>
+        </ul>
+    </div>
+</div>
+
+<div id="t6" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>6. Structuri de Date: Stiva (LIFO)</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Structură de date liniară unde accesul este permis doar la un singur capăt (vârful).</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>LIFO:</strong> Last In, First Out (Ultimul intrat, primul ieșit).</li>
+            <li><strong>Operații:</strong> <code>Push</code> (adaugă în vârf) și <code>Pop</code> (extrage din vârf).</li>
+        </ul>
+        <p><strong>Aplicații:</strong> Butonul „Back” din browser, memorarea apelurilor de subprograme.</p>
+    </div>
+</div>
+
+<div id="t7" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>7. Structuri de Date: Coada (FIFO)</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Structură de date unde elementele sunt procesate în ordinea în care au fost adăugate.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>FIFO:</strong> First In, First Out (Primul venit, primul servit).</li>
+            <li><strong>Structura:</strong> Are un capăt de început (scoatere) și unul de sfârșit (adăugare).</li>
+        </ul>
+        <p><strong>Aplicații:</strong> Cozile de printare, gestionarea proceselor în Windows/Linux.</p>
+    </div>
+</div>
+
+<div id="t8" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>8. Tehnica Greedy</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Metodă de optimizare care face alegerea optimă la fiecare pas local pentru a ajunge la o soluție globală.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Definitiv:</strong> Nu se revine niciodată la alegerile făcute anterior.</li>
+            <li><strong>Avantaj:</strong> Foarte rapidă (complexitate mică).</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Plata unei sume cu număr minim de bancnote (alegem mereu cea mai mare bancnotă).</p>
+    </div>
+</div>
+
+<div id="t9" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>9. Metoda Backtracking</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> O metodă de explorare sistematică a tuturor soluțiilor posibile ale unei probleme.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Încercare și eroare:</strong> Dacă un pas încalcă condițiile, ne întoarcem (backtrack).</li>
+            <li><strong>Dezavantaj:</strong> Este lentă (verifică foarte multe variante).</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Generarea permutărilor, problema celor n regine pe șah.</p>
+    </div>
+</div>
+
+<div id="t10" class="page container">
+    <a href="#clasa11" class="back-btn">← Înapoi la Teme</a>
+    <h2>10. Metoda Divide et Impera</h2>
+    <div class="theory-section">
+        <p><strong>Ce este:</strong> Strategie bazată pe descompunerea unei probleme complexe în subprobleme mai mici și identice.</p>
+        <h4>Puncte cheie de povestit:</h4>
+        <ul>
+            <li><strong>Etapele:</strong> Divide (sparge), Stăpânește (rezolvă), Combină (unește).</li>
+            <li><strong>Eficiență:</strong> Reduce considerabil timpul de execuție pentru căutări și sortări.</li>
+        </ul>
+        <p><strong>Exemplu:</strong> Căutarea binară (împărțirea repetată a șirului sortat la jumătate).</p>
+    </div>
+</div>
     <div id="clasa12" class="page container">
         <a href="#" class="back-btn">← Înapoi</a>
         <h2>Clasa a XII-a: Tehnologii Informaționale</h2>
